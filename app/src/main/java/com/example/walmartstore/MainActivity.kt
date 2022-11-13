@@ -3,10 +3,7 @@ package com.example.walmartstore
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
 
@@ -29,9 +26,21 @@ class MainActivity : AppCompatActivity() {
         val loginButton = findViewById<Button>(R.id.sign_in_button)
         val createAccountButton = findViewById<Button>(R.id.create_account_button)
 
+        intent?.let {
+            val newUser =  intent.extras?.getParcelable("newUserOnject") as User?
+            newUser?.let {
+                users.add(it)
+            }
+        }
+
+
+
+
+
+
         loginButton.setOnClickListener {
             val loginInstance = User(userName = User.UserName(userEmail.text.toString(),userPassword.text.toString()))
-            if (loginInstance.userName.email.isBlank() || loginInstance.userName.password.isBlank()){
+            if (loginInstance.userName?.email?.isBlank() ?: false || loginInstance.userName?.password?.isBlank() ?: false){
                 Toast.makeText(applicationContext, "Empty fields!",Toast.LENGTH_SHORT).show()
             }else if(!users.map { u -> u.userName }.contains(loginInstance.userName)){
                 Toast.makeText(applicationContext, "User not found",Toast.LENGTH_SHORT).show()

@@ -61,6 +61,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/first_name_editbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -80,6 +81,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/last_name_editbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -99,6 +101,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_editbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -118,13 +121,14 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password_editbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/b_create_account"
+                android:id="@+id/create_account_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
